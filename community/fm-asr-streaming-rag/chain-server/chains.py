@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from typing import Union
 from copy import copy
 from datetime import datetime, timedelta
 from langchain_core.output_parsers import StrOutputParser
@@ -21,9 +20,9 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain.docstore.document import Document
 
 from accumulator import TextAccumulator
-from retriever import NemoRetrieverInterface, NvidiaApiInterface
-from common import get_logger, LLMConfig, TimeResponse, UserIntent
-from utils import get_llm, classify
+from retriever import NVRetriever
+from common import get_logger, LLMConfig
+from utils import get_llm, classify, TimeResponse, UserIntent
 from prompts import RAG_PROMPT, INTENT_PROMPT, RECENCY_PROMPT, SUMMARIZATION_PROMPT
 
 logger = get_logger(__name__)
@@ -36,7 +35,7 @@ class RagChain:
         self,
         config: LLMConfig,
         text_accumulator: TextAccumulator,
-        retv_interface: Union[NemoRetrieverInterface, NvidiaApiInterface]
+        retv_interface: NVRetriever
     ):
         self.config = config
         self.text_accumulator = text_accumulator
