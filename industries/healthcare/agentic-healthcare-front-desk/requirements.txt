@@ -1,8 +1,8 @@
-langchain==0.3.7
+langchain==0.3.13
 langgraph==0.2.50
-langchain-community==0.3.7
+langchain-community==0.3.13
 langchain_nvidia_ai_endpoints==0.3.5
-gradio==4.43.0
+gradio==5.5.0
 nvidia-riva-client==2.14.0
 pydantic==2.8.2
 fastapi==0.112.1
